@@ -1,14 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: patryk
- * Date: 2017-12-13
- * Time: 16:29
- */
 
+ /**
+     * @property Test
+     */
 class Test extends MY_Model
 {
-     public function abc(){
+
+    public function abc()
+    {
         echo "dziala";
     }
+
+
 }
