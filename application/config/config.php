@@ -1,6 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Auto load
+ */
+
+function __autoload($classname)
+{
+    if (strpos($classname, 'CI_') !== 0) {
+        $path = array('libraries');
+        foreach ($path as $dir) {
+            $file = APPPATH . $dir . "/" . $classname . '.php';
+        }
+        if (file_exists($file) && is_file($file)) {
+            @require_once $file;
+        }
+    }
+}
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
