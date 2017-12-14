@@ -1,0 +1,1 @@
+<div class="divider"><span class="divider-core"></span></div>

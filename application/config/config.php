@@ -18,6 +18,7 @@ function __autoload($classname)
     }
 }
 
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -40,6 +41,7 @@ function __autoload($classname)
 | a PHP script and you can easily do that on your own.
 |
 */
+
 $config['base_url'] = 'http://localhost:8016/gainland/';
 
 /*
@@ -52,7 +54,7 @@ $config['base_url'] = 'http://localhost:8016/gainland/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -93,7 +95,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language'] = 'english';
+$config['language'] = 'polish';
 
 /*
 |--------------------------------------------------------------------------
@@ -341,7 +343,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'dsfse5235rewrqeWrd#@$#reaed1!#d';
 
 /*
 |--------------------------------------------------------------------------

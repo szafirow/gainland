@@ -1,8 +1,8 @@
 <?php
 
- /**
-     * @property Test
-     */
+/**
+ * @property Test
+ */
 class Test extends MY_Model
 {
 
