@@ -13,11 +13,11 @@ class Model_User extends MY_Model
         parent::__construct();
     }
 
-    public function login($username, $password)
+    public function login($login, $password)
     {
-        $this->db->select('id');
+        $this->db->select('id_user,login');
         $this->db->from('user');
-        $this->db->where('login', $username);
+        $this->db->where('login', $login);
         $this->db->where('password', $password);
 
         $query = $this->db->get();

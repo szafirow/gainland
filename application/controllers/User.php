@@ -32,23 +32,37 @@ class User extends FrontendController
     }
 
 
-    function login($password)
+    function login()
     {
-        $username = $this->input->post('username');
-        $result = $this->login->login($$username, $password);
-        if ($result) {
-            $sess_array = array();
-            foreach ($result as $row) {
-                $sess_array = $arrayName = array(
-                    'id' => $row->id,
-                    'login' => $row->login
-                );
-                $this->session->set_userdata('logged_in', $sess_array);
+        $this->form_validation->set_rules('username', 'Username', 'trim|required');
+
+        if ($this->form_validation->run() == FALSE) {
+
+            //nie zalogowany
+            $login = $this->input->post('login');
+            $password = $this->input->post('password');
+
+            $result = $this->Model_User->login($login, $password);
+            if ($result) {
+
+                //jestes zalogoany
+                //sprawdz range
+
+                $sess_array = array();
+                foreach ($result as $row) {
+                    $sess_array = $arrayName = array(
+                        'id' => $row->id,
+                        'login' => $row->login
+                    );
+                    $this->session->set_userdata('logged_in', $sess_array);
+                }
+                return true;
+            } else {
+                $this->form_validation->set_message('login', 'Invalid username or password');
+                return false;
             }
-            return true;
         } else {
-            $this->form_validation->set_message('login', 'Invalid username or password');
-            return false;
+            //zalogowany
         }
     }
 
