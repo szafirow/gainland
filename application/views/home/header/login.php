@@ -4,6 +4,7 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                     aria-hidden="true">&times;</span></button>
         <strong><?php echo validation_error(); ?></strong>
+        <?php echo $_SESSION; ?>
     </div>
     <?php
 }
@@ -15,13 +16,13 @@
 
     <div style="margin-bottom: 25px" class="input-group">
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-        <input type="text" class="form-control" name="login-log"
-               value="" placeholder="login or email">
+        <input type="text" class="form-control" name="login_log"
+               value="" placeholder="login lub email">
     </div>
 
     <div style="margin-bottom: 25px" class="input-group">
         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-        <input type="password" class="form-control" name="password-log"
+        <input type="password" class="form-control" name="password_log"
                placeholder="password">
     </div>
 

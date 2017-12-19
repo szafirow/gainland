@@ -21,57 +21,61 @@ class User extends FrontendController
     public function index()
     {
 
-
-        /* $this->form_validation->set_rules('username', 'Username', 'trim|required');
-         $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_login');
-         if ($this->form_validation->run() == false) {
-             // $this->load->view('login_view');
-         } else {
-             redirect(base_url('index.php/home'), 'refresh');
-         }*/
     }
 
 
     function login()
     {
-        $this->form_validation->set_rules('username', 'Username', 'trim|required');
+        $this->form_validation->set_rules('login_log', 'Login', 'trim|required|callback_checkLoginLog');
+        $this->form_validation->set_rules('password_log', 'Hasło', 'trim|required|callback_checkPasswordLog');
 
         if ($this->form_validation->run() == FALSE) {
-
             //nie zalogowany
+            $this->session->set_flashdata('item', array('message' => validation_errors(), 'class' => 'danger'));
+            redirect("/");
+
+        } else {
+
             $login = $this->input->post('login');
             $password = $this->input->post('password');
 
-            $result = $this->Model_User->login($login, $password);
-            if ($result) {
+            $this->Model_User->login($login, $password);
+            $this->session->set_flashdata('item', array('message' => 'Zalogowany!', 'class' => 'success'));
+            redirect("/");
 
-                //jestes zalogoany
-                //sprawdz range
 
-                $sess_array = array();
-                foreach ($result as $row) {
-                    $sess_array = $arrayName = array(
-                        'id' => $row->id,
-                        'login' => $row->login
-                    );
-                    $this->session->set_userdata('logged_in', $sess_array);
-                }
-                return true;
-            } else {
-                $this->form_validation->set_message('login', 'Invalid username or password');
-                return false;
-            }
-        } else {
-            //zalogowany
+            /*  $login = $this->input->post('login');
+              $password = $this->input->post('password');
+
+              $result = $this->Model_User->login($login, $password);
+              if ($result) {
+
+                  //jestes zalogoany
+                  //sprawdz range
+
+                  $sess_array = array();
+                  foreach ($result as $row) {
+                      $sess_array = $arrayName = array(
+                          'id' => $row->id,
+                          'login' => $row->login
+                      );
+                      $this->session->set_userdata('logged_in', $sess_array);
+                  }
+                  return true;
+              } else {
+                  $this->form_validation->set_message('login', 'Invalid username or password');
+                  return false;
+              }*/
+
         }
     }
 
 
     function register()
     {
-        $this->form_validation->set_rules('login_reg', 'Login', 'trim|required|min_length[3]|max_length[20]|callback_checkLogin');
+        $this->form_validation->set_rules('login_reg', 'Login', 'trim|required|min_length[3]|max_length[20]|callback_checkLoginReg');
         $this->form_validation->set_rules('email_reg', 'Email', 'trim|required|min_length[5]|max_length[50]|valid_email');
-        $this->form_validation->set_rules('password_reg', 'Hasło', 'trim|required|min_length[5]|max_length[20]|callback_checkPass');
+        $this->form_validation->set_rules('password_reg', 'Hasło', 'trim|required|min_length[5]|max_length[20]|callback_checkPassReg');
         $this->form_validation->set_rules('recommended_reg', 'Polecający', 'trim|min_length[3]|max_length[20]');
         $this->form_validation->set_rules('rules_reg', 'Regulamin', 'trim|required');
         if ($this->form_validation->run() == FALSE) {
@@ -85,42 +89,68 @@ class User extends FrontendController
 
     }
 
-    function checkLogin()
+    function checkLoginReg()
     {
         $login = $this->input->post('login_reg');
 
         if ($this->Model_User->loginTest($login) == TRUE) {
-            $this->form_validation->set_message('checkLogin', 'Taki Login istnie już w bazie.');
+            $this->form_validation->set_message('checkLoginReg', 'Taki Login istnieje już w bazie.');
             return FALSE;
         } else {
             return TRUE;
         }
     }
 
-    function checkPass()
+    function checkPassReg()
     {
         $password = $this->input->post('password_reg');
         $repeat_password_reg = $this->input->post('repeat_password_reg');
 
         if ($password != $repeat_password_reg) {
-            $this->form_validation->set_message('checkPass', 'Wprowadzone hasła nie są identyczne.');
+            $this->form_validation->set_message('checkPassReg', 'Wprowadzone hasła nie są identyczne.');
             return FALSE;
         } elseif (!preg_match("#[0-9]+#", $password)) {
-            $this->form_validation->set_message('checkPass', 'Hasło powinno zawierać co najmniej jedną cyfrę.');
+            $this->form_validation->set_message('checkPassReg', 'Hasło powinno zawierać co najmniej jedną cyfrę.');
             return FALSE;
         } elseif (!preg_match("#[a-z]+#", $password)) {
-            $this->form_validation->set_message('checkPass', 'Hasło musi zawierać conajmniej jedną literę.');
+            $this->form_validation->set_message('checkPassReg', 'Hasło musi zawierać conajmniej jedną literę.');
             return FALSE;
         } elseif (!preg_match("#[A-Z]+#", $password)) {
-            $this->form_validation->set_message('checkPass', 'Hasło powinno zawierać co najmniej jedną dużą literę.');
+            $this->form_validation->set_message('checkPassReg', 'Hasło powinno zawierać co najmniej jedną dużą literę.');
             return FALSE;
         } elseif (!preg_match("#\W+#", $password)) {
-            $this->form_validation->set_message('checkPass', 'Hasło powinno zawierać co najmniej jeden symbol.');
+            $this->form_validation->set_message('checkPassReg', 'Hasło powinno zawierać co najmniej jeden symbol.');
             return FALSE;
         } else {
             return TRUE;
         }
     }
 
+    function checkLoginLog()
+    {
+        $str = $this->input->post('login_log');
 
+        if ($this->Model_User->loginAndEmailTest($str) == FALSE) {
+            $this->form_validation->set_message('checkLoginLog', 'Taki login nie istnieje w bazie danych.');
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+
+    function checkPasswordLog()
+    {
+        $login = $this->input->post('login_log');
+        $password = $this->input->post('password_log');
+
+        $result = $this->Model_User->login($login, $password);
+        if (!$result) {
+            $this->form_validation->set_message('checkPasswordLog', 'Wprowadzono błędne hasło.');
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+
+
+    }
 }

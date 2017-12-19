@@ -13,19 +13,44 @@ class Model_User extends MY_Model
         parent::__construct();
     }
 
-    public function login($login, $password)
+
+    /* public function login($login, $password)
     {
         $this->db->select('id_user,login');
         $this->db->from('user');
         $this->db->where('login', $login);
         $this->db->where('password', $password);
-
         $query = $this->db->get();
         if ($query->num_rows() == 1) {
             return $query->result();
         } else {
             return false;
         }
+    }*/
+
+    public function login($login, $password)
+    {
+        //pobranie hash
+        $this->db->select('password');
+        $this->db->from('user');
+        $this->db->where('login', $login);
+
+        $query = $this->db->get();
+        if ($query->num_rows() == 1) {
+
+            $result = $query->result_array();
+            foreach ($result as $item) {
+                if (password_verify($password, $item['password'])) {
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
+            }
+        } else {
+            return FALSE;
+        }
+
+
     }
 
 
@@ -57,10 +82,24 @@ class Model_User extends MY_Model
      */
     function loginTest($login)
     {
-
         $this->db->select('login');
         $this->db->from('user');
         $this->db->where('login', $login);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    function loginAndEmailTest($str)
+    {
+        $this->db->select('login,email');
+        $this->db->from('user');
+        $this->db->where('login', $str);
+        $this->db->or_where('email', $str);
         $query = $this->db->get();
 
         if ($query->num_rows() > 0) {
