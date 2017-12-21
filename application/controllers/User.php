@@ -36,36 +36,22 @@ class User extends FrontendController
 
         } else {
 
-            $login = $this->input->post('login');
-            $password = $this->input->post('password');
+            $login = $this->input->post('login_log');
+            $password = $this->input->post('password_log');
 
-            $this->Model_User->login($login, $password);
-            $this->session->set_flashdata('item', array('message' => 'Zalogowany!', 'class' => 'success'));
-            redirect("/");
+            $result = $this->Model_User->login($login, $password);
+            if ($result) {
+                $sess_array = array();
+                $sess_array = $result;
+                $this->session->set_userdata('logged_in', $sess_array);
+                $this->session->set_flashdata('item', array('message' => 'Zalogowany!', 'class' => 'success'));
+                redirect("/");
+            } else {
+                return FALSE;
+            }
 
-
-            /*  $login = $this->input->post('login');
-              $password = $this->input->post('password');
-
-              $result = $this->Model_User->login($login, $password);
-              if ($result) {
-
-                  //jestes zalogoany
-                  //sprawdz range
-
-                  $sess_array = array();
-                  foreach ($result as $row) {
-                      $sess_array = $arrayName = array(
-                          'id' => $row->id,
-                          'login' => $row->login
-                      );
-                      $this->session->set_userdata('logged_in', $sess_array);
-                  }
-                  return true;
-              } else {
-                  $this->form_validation->set_message('login', 'Invalid username or password');
-                  return false;
-              }*/
+            //$logged_in = $this->session->userdata('logged_in');
+            //$createdby = $logged_in['id'];
 
         }
     }

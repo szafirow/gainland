@@ -13,44 +13,29 @@ class Model_User extends MY_Model
         parent::__construct();
     }
 
-
-    /* public function login($login, $password)
-    {
-        $this->db->select('id_user,login');
-        $this->db->from('user');
-        $this->db->where('login', $login);
-        $this->db->where('password', $password);
-        $query = $this->db->get();
-        if ($query->num_rows() == 1) {
-            return $query->result();
-        } else {
-            return false;
-        }
-    }*/
-
     public function login($login, $password)
     {
         //pobranie hash
-        $this->db->select('password');
+        $this->db->select('id_user,login,password');
         $this->db->from('user');
         $this->db->where('login', $login);
 
         $query = $this->db->get();
-        if ($query->num_rows() == 1) {
+        if ($query->num_rows() > 0) {
 
             $result = $query->result_array();
-            foreach ($result as $item) {
-                if (password_verify($password, $item['password'])) {
-                    return TRUE;
-                } else {
-                    return FALSE;
-                }
+            $hash = $result['0']['password'];
+
+            if (password_verify($password, $hash)) {
+                $value = array(
+                    'id_user' => $result['0']['id_user'],
+                    'login' => $result['0']['login']
+                );
+                return $value;
+            } else {
+                return FALSE;
             }
-        } else {
-            return FALSE;
         }
-
-
     }
 
 
@@ -108,12 +93,6 @@ class Model_User extends MY_Model
             return FALSE;
         }
     }
-
-    /*   function rand_token()
-       {
-           $s = substr(str_shuffle(str_repeat('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789', 5)), 0, 10);
-           return md5($s);
-       }*/
 
     private function encrypt_password($password)
     {
