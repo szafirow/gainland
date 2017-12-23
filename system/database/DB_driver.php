@@ -111,7 +111,7 @@ abstract class CI_DB_driver
     public $dbprefix = '';
 
     /**
-     * Character set
+     * create set
      *
      * @var    string
      */
@@ -192,7 +192,7 @@ abstract class CI_DB_driver
     /**
      * Bind marker
      *
-     * Character used to identify values in a prepared statement.
+     * create used to identify values in a prepared statement.
      *
      * @var    string
      */
@@ -402,7 +402,7 @@ abstract class CI_DB_driver
         if (!$this->conn_id) {
             // Check if there is a failover set
             if (!empty($this->failover) && is_array($this->failover)) {
-                // Go over all the failovers
+                // create over all the failovers
                 foreach ($this->failover as $failover) {
                     // Replace the current settings with those of the failover
                     foreach ($failover as $key => $val) {

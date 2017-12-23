@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Created by PhpStorm.
  * User: patryk
@@ -8,6 +9,7 @@
 
 /**
  * @property Model_User $Model_User
+ * @property Model_Character $Model_Character
  * @property Home $Home
  */
 class User extends FrontendController
@@ -16,6 +18,7 @@ class User extends FrontendController
     {
         parent::__construct();
         $this->load->model('Model_User');
+        $this->load->model('Model_Character');
     }
 
     public function index()
@@ -45,7 +48,15 @@ class User extends FrontendController
                 $sess_array = $result;
                 $this->session->set_userdata('logged_in', $sess_array);
                 $this->session->set_flashdata('item', array('message' => 'Zalogowany!', 'class' => 'success'));
-                redirect("/Main");
+
+
+                $count = $this->Model_Character->count_character($login);
+                if ($count == 0) {
+                    redirect("/create");
+                } else {
+                    redirect("/main");
+                }
+
             } else {
                 return FALSE;
             }
@@ -141,18 +152,11 @@ class User extends FrontendController
     }
 
 
-    function is_logged_in()
+    public function logout()
     {
-        $is_logged_in = $this->session->userdata('is_logged_in');
-        if (!isset($is_logged_in) || $is_logged_in != true) {
-            echo 'You don\'t have permission to access this page.';
-            die();
-            //$this->load->view('login_form');
-        } else {
-
-            return true;
-
-        }
+        $this->session->unset_userdata('logged_in');
+        $this->session->set_flashdata('item', array('message' => 'Wylogowano pomyślnie!', 'class' => 'success'));
+        redirect("/");
+        $this->session->sess_destroy();
     }
-
 }

@@ -11,4 +11,21 @@ class MY_Controller extends CI_Controller
         $logged_in = $this->session->userdata('logged_in');
         $this->data['login'] = $logged_in['login'];
     }
+
+    function index()
+    {
+
+    }
+
+    function is_logged_in()
+    {
+        $logged_in = $this->session->userdata('logged_in');
+        if (empty($logged_in)) {
+            show_error('You don\'t have permission to access this page.', 401);
+            die();
+        } else {
+            return TRUE;
+        }
+    }
+
 }

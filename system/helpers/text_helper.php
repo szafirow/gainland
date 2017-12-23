@@ -80,7 +80,7 @@ if (!function_exists('word_limiter')) {
 
 if (!function_exists('character_limiter')) {
     /**
-     * Character Limiter
+     * create Limiter
      *
      * Limits the string based on the character count.  Preserves complete words
      * so the character count may not be exactly as specified.

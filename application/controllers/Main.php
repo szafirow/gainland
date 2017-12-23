@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Created by PhpStorm.
  * User: patryk
@@ -11,6 +12,7 @@ class Main extends FrontendController
     function __construct()
     {
         parent::__construct();
+        $this->is_logged_in();
     }
 
     public function index()
@@ -23,10 +25,5 @@ class Main extends FrontendController
         $this->load->view('main/footer.php');
     }
 
-
-    public function logout()
-    {
-
-    }
 
 }

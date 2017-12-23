@@ -28,7 +28,8 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Wyloguj się</a></li>
+                <li><a href="<?php echo base_url('user/logout'); ?>"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                        Wyloguj się</a></li>
                 <li></li>
             </ul>
         </div>

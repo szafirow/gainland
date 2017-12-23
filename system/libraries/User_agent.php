@@ -87,7 +87,7 @@ class CI_User_agent
     public $languages = array();
 
     /**
-     * Character sets accepted by the current user agent
+     * create sets accepted by the current user agent
      *
      * @var array
      */
@@ -574,7 +574,7 @@ class CI_User_agent
     // --------------------------------------------------------------------
 
     /**
-     * Get the accepted Character Sets
+     * Get the accepted create Sets
      *
      * @return    array
      */

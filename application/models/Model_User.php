@@ -51,7 +51,6 @@ class Model_User extends MY_Model
             'id_user' => '',
             'login' => $login,
             'password' => $this->encrypt_password($password),
-            'token' => "asdasd3423",
             'email' => $email,
             'recommended' => $recommended,
             'active' => 1,

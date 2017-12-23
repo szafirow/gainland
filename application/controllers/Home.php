@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Created by PhpStorm.
  * User: patryk
@@ -15,6 +16,7 @@ class Home extends FrontendController
 
     public function index()
     {
+
         $this->load->view('home/head.php');
         $this->load->view('home/nav.php');
         $this->load->view('home/header.php');
