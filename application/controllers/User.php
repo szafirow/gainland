@@ -21,10 +21,6 @@ class User extends FrontendController
         $this->load->model('Model_Character');
     }
 
-    /* public function index()
-     {
-
-     }*/
 
 
     function login()
@@ -52,10 +48,8 @@ class User extends FrontendController
 
                 $count = $this->Model_Character->count_character($login);
                 if ($count == 0) {
-                    $this->session->unset_userdata('item');
-                    redirect("/character/create");
+                    redirect("/character/");
                 } else {
-                    $this->session->unset_userdata('item');
                     redirect("/main");
                 }
 

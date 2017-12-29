@@ -31,15 +31,17 @@ class Character extends FrontendController
         $this->form_validation->set_rules('character', 'Nazwa postaci', 'trim|required|min_length[3]|max_length[20]');
         $this->form_validation->set_rules('religions', 'Religia', 'trim|required');
 
-        if ($this->form_validation->run() == FALSE) {
-            if (($this->session->flashdata('item'))) {
-                $this->session->set_flashdata('item', array('message' => validation_errors(), 'class' => 'danger'));
+        $formSubmit = $this->input->post('action');
 
+        if ($formSubmit == 1) {
+            if ($this->form_validation->run() == FALSE) {
+                $this->session->set_flashdata('item', array('message' => validation_errors(), 'class' => 'danger'));
+                redirect("/character/");
+            } else {
+                redirect("/main");
             }
-            redirect("/character/");
-        } else {
-            redirect("/main");
         }
+
     }
 
 
