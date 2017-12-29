@@ -16,11 +16,11 @@ class Model_Character extends MY_Model
     function count_character($login)
     {
 
-        $this->db->select('*');
-        $this->db->from('character');
-        $this->db->join('user', 'user.id_user = character.id_character');
-        $this->db->where('user.login', $login);  //active=1
-        $this->db->where('user.active', 1);  //active=1
+        $this->db->select('u.login,ch.name');
+        $this->db->from('character ch');
+        $this->db->join('user u', 'u.id_user = ch.id_user', 'inner');
+        $this->db->where('u.login', $login);
+        $this->db->where('u.active', 1);  //active=1
 
         $query = $this->db->get();
         $count = $query->num_rows();
@@ -92,6 +92,12 @@ class Model_Character extends MY_Model
         );
         $this->db->insert('bag', $data);
 
+        /* //zablokowanie ekranu personalizacji
+         $data = array(
+             'character_screen' => 0
+         );
+         $this->db->where('id_user', $id);
+         $this->db->update('user', $data);*/
 
         //level, bag osobne tabele
     }
