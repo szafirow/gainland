@@ -1,0 +1,163 @@
+@import url("../../assets/css/fileinput.css");
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #020911;
+}
+
+section {
+    padding: 100px 0;
+}
+
+/**
+Logo
+ */
+.logo {
+    width: auto;
+    height: 55px;
+    opacity: 0.9;
+}
+
+.navbar-brand {
+    padding: 0px 15px;
+}
+
+/*Menu*/
+
+.navbar {
+    background: #020911;
+    border: none;
+    min-height: 55px;
+}
+
+.navbar-nav > li > a, .navbar-nav > li > a:hover {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background: #292929;
+    color: #fff;
+}
+
+.navbar-nav > li.nohover {
+    pointer-events: none;
+}
+
+.navbar-nav > li a {
+    color: #a9a9a9;
+}
+
+a.btn.btn-danger-pro {
+    color: #fff !important;
+}
+
+.navbar .btn-danger {
+    color: #fff;
+}
+
+/**
+Toogle
+*/
+@media (max-width: 767.5px) {
+    .navbar-toggle .icon-bar {
+        background: #fff;
+    }
+}
+
+#top {
+    overflow: hidden;
+    background: url("../../assets/img/bg-create.jpg") no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+
+/**
+Hr
+ */
+.divider {
+    height: 55px;
+    margin: -18px 0px;
+    position: relative;
+    z-index: 1;
+}
+
+.divider:before {
+    left: 0;
+    margin-right: 82px;
+    right: 50%;
+    background: url("../../assets/img/divider.png") repeat-x 50% 0;
+    content: "";
+    height: 55px;
+    position: absolute;
+    top: 0;
+}
+
+.divider:after {
+    left: 50%;
+    margin-left: 82px;
+    right: 0;
+    background: url("../../assets/img/divider.png") repeat-x 50% 0;
+    content: "";
+    height: 55px;
+    position: absolute;
+    top: 0;
+}
+
+.divider .divider-core {
+    position: absolute;
+    height: 55px;
+    left: 50%;
+    margin: 0 0 0 -82px;
+    top: 5px;
+    width: 164px;
+    z-index: 9;
+    background: url("../../assets/img/divider.png") repeat-x 50% 100%;
+    background-size: 100%;
+}
+
+/**
+Headline + line
+ */
+.headline {
+    font-size: 42px;
+    line-height: 1.1em;
+    text-shadow: 0 0 10px #000;
+    margin-bottom: .5em;
+    font-family: 'PT Serif', serif;
+    text-transform: uppercase;
+    margin-top: 0;
+    font-weight: 300;
+    color: #fff;
+}
+
+.has-line-center::after, .has-line::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    margin: 20px 0;
+    background: #fff;
+}
+
+.has-line-center::after {
+    margin: 20px auto;
+}
+
+.check {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.img-check {
+    max-width: 100%;
+    height: auto;
+}
+
+img.img-thumbnail.img-check {
+    padding: 30px;
+}
+
+img.img-thumbnail.img-check.check {
+    padding: 10px;
+    filter: blur(1px);
+    filter: drop-shadow(4px 4px 5px red);
+}
