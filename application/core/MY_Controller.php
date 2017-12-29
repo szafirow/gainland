@@ -4,12 +4,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MY_Controller extends CI_Controller
 {
     public $data;
+    public $id;
+
 
     function __construct()
     {
         parent::__construct();
         $logged_in = $this->session->userdata('logged_in');
-        $this->data['login'] = $logged_in['login'];
+        if (!empty($logged_in)) {
+            $this->data['login'] = $logged_in['login'];
+            // $this->data['id'] = $logged_in['id_user'];
+            $this->id = $logged_in['id_user'];
+        }
     }
 
     function index()

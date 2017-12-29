@@ -143,20 +143,21 @@ Headline + line
     margin: 20px auto;
 }
 
-.check {
-    background: rgba(0, 0, 0, 0.2);
+.check-gender, .check-religions {
+
+    background: rgba(0, 0, 0, 0.3);
 }
 
-.img-check {
+.img-check-gender, .img-check-religions {
     max-width: 100%;
     height: auto;
 }
 
-img.img-thumbnail.img-check {
+/*img.img-thumbnail.img-check {
     padding: 30px;
-}
+}*/
 
-img.img-thumbnail.img-check.check {
+img.img-thumbnail.img-check-gender.check-gender, img.img-thumbnail.img-check-religions.check-religions {
     padding: 10px;
     filter: blur(1px);
     filter: drop-shadow(4px 4px 5px red);

@@ -17,7 +17,6 @@ class Main extends FrontendController
 
     public function index()
     {
-
         $this->load->view('main/head.php');
         $this->load->view('main/nav.php', $this->data);
         $this->load->view('main/section-top.php');

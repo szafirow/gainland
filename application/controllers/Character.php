@@ -28,7 +28,8 @@ class Character extends FrontendController
 
     public function create()
     {
-        $this->form_validation->set_rules('character', 'Nazwa postaci', 'trim|required|min_length[3]|max_length[20]');
+        $this->form_validation->set_rules('character', 'Nazwa postaci', 'trim|required|min_length[3]|max_length[20]|callback_checkName');
+        $this->form_validation->set_rules('gender', 'Płeć', 'trim|required');
         $this->form_validation->set_rules('religions', 'Religia', 'trim|required');
 
         $formSubmit = $this->input->post('action');
@@ -38,10 +39,23 @@ class Character extends FrontendController
                 $this->session->set_flashdata('item', array('message' => validation_errors(), 'class' => 'danger'));
                 redirect("/character/");
             } else {
+                $this->Model_Character->insert($this->id);
                 redirect("/main");
             }
         }
 
+    }
+
+    function checkName()
+    {
+        $character = $this->input->post('character');
+
+        if ($this->Model_Character->characterTest($this->id, $character) == TRUE) {
+            $this->form_validation->set_message('checkName', 'Nazwa gracza jest zajęta.');
+            return FALSE;
+        } else {
+            return TRUE;
+        }
     }
 
 
