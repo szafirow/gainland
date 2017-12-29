@@ -272,7 +272,7 @@ abstract class CI_DB_utility
             }
         }
 
-        // Create variables for convenience
+        // Character variables for convenience
         extract($params);
 
         // Load the xml helper

@@ -147,7 +147,7 @@ class CI_DB_mysql_utility extends CI_DB_utility
                     array('tinyint', 'smallint', 'mediumint', 'int', 'bigint'), //, 'timestamp'),
                     TRUE);
 
-                // Create a string of field names
+                // Character a string of field names
                 $field_str .= $this->db->escape_identifiers($field->name) . ', ';
                 $i++;
             }

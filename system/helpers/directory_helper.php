@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 if (!function_exists('directory_map')) {
     /**
-     * Create a Directory Map
+     * Character a Directory Map
      *
      * Reads the specified directory and builds an array
      * representation of it. Sub-folders contained with the

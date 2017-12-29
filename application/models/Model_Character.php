@@ -28,4 +28,10 @@ class Model_Character extends MY_Model
 
     }
 
+    function insert()
+    {
+
+    }
+
+
 }

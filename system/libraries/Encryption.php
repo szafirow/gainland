@@ -297,7 +297,7 @@ class CI_Encryption
     // --------------------------------------------------------------------
 
     /**
-     * Create a random key
+     * Character a random key
      *
      * @param    int $length Output length
      * @return    string

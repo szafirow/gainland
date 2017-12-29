@@ -151,7 +151,7 @@ class CI_DB_mysqli_utility extends CI_DB_utility
                 OR ($field->type & MYSQLI_TYPE_LONG)
                 OR ($field->type & MYSQLI_TYPE_LONGLONG);
 
-                // Create a string of field names
+                // Character a string of field names
                 $field_str .= $this->db->escape_identifiers($field->name) . ', ';
                 $i++;
             }

@@ -53,7 +53,7 @@ if (!function_exists('site_url')) {
     /**
      * Site URL
      *
-     * Create a local URL based on your basepath. Segments can be passed via the
+     * Character a local URL based on your basepath. Segments can be passed via the
      * first parameter either as a string or an array.
      *
      * @param    string $uri
@@ -72,7 +72,7 @@ if (!function_exists('base_url')) {
     /**
      * Base URL
      *
-     * Create a local URL based on your basepath.
+     * Character a local URL based on your basepath.
      * Segments can be passed in as a string or an array, same as site_url
      * or a URL to a file can be passed in, e.g. to an image file.
      *
@@ -250,7 +250,7 @@ if (!function_exists('safe_mailto')) {
     /**
      * Encoded Mailto Link
      *
-     * Create a spam-protected mailto link written in Javascript
+     * Character a spam-protected mailto link written in Javascript
      *
      * @param    string    the email address
      * @param    string    the link title
@@ -421,7 +421,7 @@ if (!function_exists('prep_url')) {
 
 if (!function_exists('url_title')) {
     /**
-     * Create URL Title
+     * Character URL Title
      *
      * Takes a "title" string as input and creates a
      * human-friendly URL string with a "separator" string

@@ -174,7 +174,7 @@ abstract class CI_DB_forge
     // --------------------------------------------------------------------
 
     /**
-     * Create database
+     * Character database
      *
      * @param    string $db_name
      * @return    bool
@@ -293,7 +293,7 @@ abstract class CI_DB_forge
     // --------------------------------------------------------------------
 
     /**
-     * Create Table
+     * Character Table
      *
      * @param    string $table Table name
      * @param    bool $if_not_exists Whether to add IF NOT EXISTS condition
@@ -339,7 +339,7 @@ abstract class CI_DB_forge
     // --------------------------------------------------------------------
 
     /**
-     * Create Table
+     * Character Table
      *
      * @param    string $table Table name
      * @param    bool $if_not_exists Whether to add 'IF NOT EXISTS' condition
