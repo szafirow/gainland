@@ -161,3 +161,14 @@ img.img-thumbnail.img-check.check {
     filter: blur(1px);
     filter: drop-shadow(4px 4px 5px red);
 }
+
+/**
+Icon
+ */
+.navbar .fa-eye {
+    color: #3399f3;
+}
+
+.navbar .fa-user {
+    color: #d47500;
+}

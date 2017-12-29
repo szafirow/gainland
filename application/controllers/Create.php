@@ -15,7 +15,9 @@ class Create extends FrontendController
 
     public function index()
     {
-
-        $this->load->view('create/all.php');
+        $this->load->view('create/head.php');
+        $this->load->view('create/nav.php');
+        $this->load->view('create/section-top.php');
+        $this->load->view('create/footer.php');
     }
 }
