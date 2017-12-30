@@ -16,9 +16,11 @@ class Model_User extends MY_Model
     public function login($login, $password)
     {
         //pobranie hash
-        $this->db->select('id_user,login,password');
+        $this->db->select('id_user,login,email,password');
         $this->db->from('user');
         $this->db->where('login', $login);
+        $this->db->or_where('email', $login);
+        // $this->
 
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
