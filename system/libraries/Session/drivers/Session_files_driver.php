@@ -209,7 +209,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
     /**
      * Write
      *
-     * Writes (create / update) session data
+     * Writes (character / update) session data
      *
      * @param    string $session_id Session ID
      * @param    string $session_data Serialized session data

@@ -99,7 +99,7 @@ $config['language'] = 'polish';
 
 /*
 |--------------------------------------------------------------------------
-| Default create Set
+| Default character Set
 |--------------------------------------------------------------------------
 |
 | This determines which character set is used by default in various methods

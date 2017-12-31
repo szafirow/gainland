@@ -107,7 +107,7 @@ class CI_Image_lib
     public $quality = 90;
 
     /**
-     * Whether to create a thumbnail
+     * Whether to character a thumbnail
      *
      * @var bool
      */
@@ -346,7 +346,7 @@ class CI_Image_lib
     public $file_permissions = 0644;
 
     /**
-     * Name of function to create image
+     * Name of function to character image
      *
      * @var string
      */
@@ -558,7 +558,7 @@ class CI_Image_lib
 
         /* Compile the finalized filenames/paths
          *
-         * We'll create two master strings containing the
+         * We'll character two master strings containing the
          * full server path to the source image and the
          * full server path to the destination image.
          * We'll also split the destination image name
@@ -922,7 +922,7 @@ class CI_Image_lib
             return FALSE;
         }
 
-        // With NetPBM we have to create a temporary image.
+        // With NetPBM we have to character a temporary image.
         // If you try manipulating the original it fails so
         // we have to rename the temp file.
         copy($this->dest_folder . 'netpbm.tmp', $this->full_dst_path);

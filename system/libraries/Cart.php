@@ -221,7 +221,7 @@ class CI_Cart
         // Prep the price. Remove leading zeros and anything that isn't a number or decimal point.
         $items['price'] = (float)$items['price'];
 
-        // We now need to create a unique identifier for the item being inserted into the cart.
+        // We now need to character a unique identifier for the item being inserted into the cart.
         // Every time something is added to the cart it is stored in the master cart array.
         // Each row in the cart array, however, must have a unique index that identifies not only
         // a particular product, but makes it possible to store identical products with different options.
@@ -246,7 +246,7 @@ class CI_Cart
         // grab quantity if it's already there and add it on
         $old_quantity = isset($this->_cart_contents[$rowid]['qty']) ? (int)$this->_cart_contents[$rowid]['qty'] : 0;
 
-        // Re-create the entry, just to make sure our index contains only the data from this submission
+        // Re-character the entry, just to make sure our index contains only the data from this submission
         $items['rowid'] = $rowid;
         $items['qty'] += $old_quantity;
         $this->_cart_contents[$rowid] = $items;
@@ -445,7 +445,7 @@ class CI_Cart
         // do we want the newest first?
         $cart = ($newest_first) ? array_reverse($this->_cart_contents) : $this->_cart_contents;
 
-        // Remove these so they don't create a problem when showing the cart table
+        // Remove these so they don't character a problem when showing the cart table
         unset($cart['total_items']);
         unset($cart['cart_total']);
 

@@ -353,7 +353,7 @@ if (!function_exists('auto_link')) {
      *
      * @param    string    the string
      * @param    string    the type: email, url, or both
-     * @param    bool    whether to create pop-up links
+     * @param    bool    whether to character pop-up links
      * @return    string
      */
     function auto_link($str, $type = 'both', $popup = FALSE)

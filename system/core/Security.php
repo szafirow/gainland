@@ -74,7 +74,7 @@ class CI_Security
     );
 
     /**
-     * create set
+     * character set
      *
      * Will be overridden by the constructor.
      *
@@ -624,7 +624,7 @@ class CI_Security
      * @link    http://php.net/html-entity-decode
      *
      * @param    string $str Input
-     * @param    string $charset create set
+     * @param    string $charset character set
      * @return    string
      */
     public function entity_decode($str, $charset = NULL)

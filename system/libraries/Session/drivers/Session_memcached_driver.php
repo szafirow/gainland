@@ -168,7 +168,7 @@ class CI_Session_memcached_driver extends CI_Session_driver implements SessionHa
     /**
      * Write
      *
-     * Writes (create / update) session data
+     * Writes (character / update) session data
      *
      * @param    string $session_id Session ID
      * @param    string $session_data Serialized session data

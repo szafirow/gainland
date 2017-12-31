@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * HTML Table Generating Class
  *
- * Lets you create tables manually or from database result objects, or arrays.
+ * Lets you character tables manually or from database result objects, or arrays.
  *
  * @package        CodeIgniter
  * @subpackage    Libraries
@@ -66,7 +66,7 @@ class CI_Table
     public $heading = array();
 
     /**
-     * Whether or not to automatically create the table header
+     * Whether or not to automatically character the table header
      *
      * @var bool
      */

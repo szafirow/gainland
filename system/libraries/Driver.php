@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * CodeIgniter Driver Library Class
  *
- * This class enables you to create "Driver" libraries that add runtime ability
+ * This class enables you to character "Driver" libraries that add runtime ability
  * to extend the capabilities of a class via additional driver objects
  *
  * @package        CodeIgniter
@@ -183,7 +183,7 @@ class CI_Driver_Library
 /**
  * CodeIgniter Driver Class
  *
- * This class enables you to create drivers for a Library based on the Driver Library.
+ * This class enables you to character drivers for a Library based on the Driver Library.
  * It handles the drivers' access to the parent library
  *
  * @package        CodeIgniter

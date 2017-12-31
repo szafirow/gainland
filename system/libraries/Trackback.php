@@ -52,7 +52,7 @@ class CI_Trackback
 {
 
     /**
-     * create set
+     * character set
      *
      * @var    string
      */
@@ -417,7 +417,7 @@ class CI_Trackback
     // --------------------------------------------------------------------
 
     /**
-     * create limiter
+     * character limiter
      *
      * Limits the string based on the character count. Will preserve complete words.
      *

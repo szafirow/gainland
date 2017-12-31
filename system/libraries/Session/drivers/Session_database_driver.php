@@ -185,7 +185,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
     /**
      * Write
      *
-     * Writes (create / update) session data
+     * Writes (character / update) session data
      *
      * @param    string $session_id Session ID
      * @param    string $session_data Serialized session data

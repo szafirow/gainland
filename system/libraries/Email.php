@@ -144,7 +144,7 @@ class CI_Email
     public $mailtype = 'text';
 
     /**
-     * create set (default: utf-8)
+     * character set (default: utf-8)
      *
      * @var    string
      */
@@ -343,7 +343,7 @@ class CI_Email
     /**
      * Base charsets
      *
-     * create sets valid for 7-bit encoding,
+     * character sets valid for 7-bit encoding,
      * excluding language suffix.
      *
      * @var    string[]
@@ -834,7 +834,7 @@ class CI_Email
     // --------------------------------------------------------------------
 
     /**
-     * Set Newline create
+     * Set Newline character
      *
      * @param    string
      * @return    CI_Email

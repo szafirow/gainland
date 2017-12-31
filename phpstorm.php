@@ -52,7 +52,7 @@ die('This file is used for development purposes only.');
  * @property CI_Router $router                              Parses URIs and determines routing
  * @property CI_Security $security                            Security Class
  * @property CI_Session $session                             Session Class
- * @property CI_Table $table                               Lets you create tables manually or from database result objects, or arrays
+ * @property CI_Table $table                               Lets you character tables manually or from database result objects, or arrays
  * @property CI_Trackback $trackback                           Trackback Sending/Receiving Class
  * @property CI_Typography $typography                          Typography Class
  * @property CI_Unit_test $unit                                Simple testing class
@@ -108,7 +108,7 @@ class CI_Controller
  * @property CI_Router $router                              Parses URIs and determines routing
  * @property CI_Security $security                            Security Class
  * @property CI_Session $session                             Session Class
- * @property CI_Table $table                               Lets you create tables manually or from database result objects, or arrays
+ * @property CI_Table $table                               Lets you character tables manually or from database result objects, or arrays
  * @property CI_Trackback $trackback                           Trackback Sending/Receiving Class
  * @property CI_Typography $typography                          Typography Class
  * @property CI_Unit_test $unit                                Simple testing class
@@ -162,7 +162,7 @@ class CI_Model
  * @property CI_Router $router                              Parses URIs and determines routing
  * @property CI_Security $security                            Security Class
  * @property CI_Session $session                             Session Class
- * @property CI_Table $table                               Lets you create tables manually or from database result objects, or arrays
+ * @property CI_Table $table                               Lets you character tables manually or from database result objects, or arrays
  * @property CI_Trackback $trackback                           Trackback Sending/Receiving Class
  * @property CI_Typography $typography                          Typography Class
  * @property CI_Unit_test $unit                                Simple testing class

@@ -166,6 +166,11 @@ img.img-thumbnail.img-check-gender.check-gender, img.img-thumbnail.img-check-rel
 /**
 Icon
  */
+
+.navbar .fa-gamepad {
+    color: #eadb35;
+}
+
 .navbar .fa-eye {
     color: #3399f3;
 }

@@ -111,7 +111,7 @@ abstract class CI_DB_driver
     public $dbprefix = '';
 
     /**
-     * create set
+     * character set
      *
      * @var    string
      */
@@ -192,7 +192,7 @@ abstract class CI_DB_driver
     /**
      * Bind marker
      *
-     * create used to identify values in a prepared statement.
+     * character used to identify values in a prepared statement.
      *
      * @var    string
      */
@@ -402,7 +402,7 @@ abstract class CI_DB_driver
         if (!$this->conn_id) {
             // Check if there is a failover set
             if (!empty($this->failover) && is_array($this->failover)) {
-                // create over all the failovers
+                // character over all the failovers
                 foreach ($this->failover as $failover) {
                     // Replace the current settings with those of the failover
                     foreach ($failover as $key => $val) {
@@ -695,7 +695,7 @@ abstract class CI_DB_driver
         // Is query caching enabled? If so, we'll serialize the
         // result object and save it to a cache file.
         if ($this->cache_on === TRUE && $this->_cache_init()) {
-            // We'll create a new instance of the result object
+            // We'll character a new instance of the result object
             // only without the platform specific driver since
             // we can't use it with cached data (the query result
             // resource ID won't be any good once we've cached the

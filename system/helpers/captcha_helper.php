@@ -54,7 +54,7 @@ if (!function_exists('create_captcha')) {
      * Create CAPTCHA
      *
      * @param    array $data data for the CAPTCHA
-     * @param    string $img_path path to create the image in
+     * @param    string $img_path path to character the image in
      * @param    string $img_url URL to the CAPTCHA image folder
      * @param    string $font_path server path to font
      * @return    string

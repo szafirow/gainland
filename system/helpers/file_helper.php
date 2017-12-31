@@ -356,7 +356,7 @@ if (!function_exists('symbolic_permissions')) {
         } elseif (($perms & 0x4000) === 0x4000) {
             $symbolic = 'd'; // Directory
         } elseif (($perms & 0x2000) === 0x2000) {
-            $symbolic = 'c'; // create special
+            $symbolic = 'c'; // character special
         } elseif (($perms & 0x1000) === 0x1000) {
             $symbolic = 'p'; // FIFO pipe
         } else {

@@ -14,6 +14,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <div class="container">
             <ul class="nav navbar-nav navbar-left">
+                <li class="nohover"><a href="#"><i class="fa fa-gamepad" aria-hidden="true"></i>
+                        Zalogowany: <?php echo $login; ?></a></li>
                 <li class="nohover"><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> Online: 0</a></li>
                 <li class="nohover"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Zarejestrowanych: 0</a>
                 </li>

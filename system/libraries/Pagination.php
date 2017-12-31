@@ -433,7 +433,7 @@ class CI_Pagination
 
         // Are we using query strings?
         if ($this->page_query_string === TRUE) {
-            // If a custom first_url hasn't been specified, we'll create one from
+            // If a custom first_url hasn't been specified, we'll character one from
             // the base_url, but without the page item.
             if ($first_url === '') {
                 $first_url = $base_url;

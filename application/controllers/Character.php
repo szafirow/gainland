@@ -15,15 +15,18 @@ class Character extends FrontendController
     function __construct()
     {
         parent::__construct();
+        $this->is_logged_in();
         $this->load->model('Model_Character');
     }
 
     public function index()
     {
-        $this->load->view('create/head.php');
-        $this->load->view('create/nav.php');
-        $this->load->view('create/section-top.php');
-        $this->load->view('create/footer.php');
+        $data['login'] = $this->login;
+
+        $this->load->view('character/head.php');
+        $this->load->view('character/nav.php', $data);
+        $this->load->view('character/section-top.php');
+        $this->load->view('character/footer.php');
     }
 
     public function create()

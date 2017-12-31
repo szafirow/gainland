@@ -533,7 +533,7 @@ class CI_FTP
 
         // Open the local file path
         if ($fp = @opendir($locpath)) {
-            // Attempt to open the remote file path and try to create it, if it doesn't exist
+            // Attempt to open the remote file path and try to character it, if it doesn't exist
             if (!$this->changedir($rempath, TRUE) && (!$this->mkdir($rempath) OR !$this->changedir($rempath))) {
                 return FALSE;
             }

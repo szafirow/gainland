@@ -92,7 +92,7 @@ class CI_Cache_redis extends CI_Driver
     public function __construct()
     {
         if (!$this->is_supported()) {
-            log_message('error', 'Cache: Failed to create Redis object; extension not loaded?');
+            log_message('error', 'Cache: Failed to character Redis object; extension not loaded?');
             return;
         }
 

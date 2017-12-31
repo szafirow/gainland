@@ -17,8 +17,10 @@ class Main extends FrontendController
 
     public function index()
     {
+        $data['login'] = $this->login;
+
         $this->load->view('main/head.php');
-        $this->load->view('main/nav.php', $this->data);
+        $this->load->view('main/nav.php', $data);
         $this->load->view('main/section-top.php');
         $this->load->view('main/section-content.php');
         $this->load->view('main/footer.php');
