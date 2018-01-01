@@ -26,6 +26,11 @@ class MY_Controller extends CI_Controller
 
     }
 
+    /*  function countTour(){
+          echo '0';
+      }*/
+
+
     function is_logged_in()
     {
         $logged_in = $this->session->userdata('logged_in');

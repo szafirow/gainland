@@ -80,17 +80,32 @@ class Model_Character extends MY_Model
         $this->db->insert('character', $data);
 
         //dodanie levela na start
-        $data = array(
-            'id_character' => $id,
-            'id_level' => 1
-        );
-        $this->db->insert('character_level', $data);
+        //select pobierajacy id_char
+        $this->db->select('id_character');
+        $this->db->from('character');
+        $this->db->where('id_user', $id);
 
-        //dodanie plecaka do postaci
-        $data = array(
-            'id_character' => $id
-        );
-        $this->db->insert('bag', $data);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            $id_character = $result['0']['id_character'];
+
+
+            $data = array(
+                'id_character' => $id_character,
+                'id_level' => 1
+            );
+            $this->db->insert('character_level', $data);
+
+
+            //dodanie plecaka do postaci
+            $data = array(
+                'id_character' => $id_character
+            );
+            $this->db->insert('bag', $data);
+
+        }
 
         /* //zablokowanie ekranu personalizacji
          $data = array(
