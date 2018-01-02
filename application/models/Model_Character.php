@@ -106,15 +106,33 @@ class Model_Character extends MY_Model
             $this->db->insert('bag', $data);
 
         }
+        $this->upload_file_avatar();
 
-        /* //zablokowanie ekranu personalizacji
-         $data = array(
-             'character_screen' => 0
-         );
-         $this->db->where('id_user', $id);
-         $this->db->update('user', $data);*/
+    }
 
-        //level, bag osobne tabele
+    private function upload_file_avatar()
+    {
+        //upload avatara
+        if (!empty($_FILES['avatar']['name'])) {
+            $config['upload_path'] = 'upload/avatar';
+            $config['allowed_types'] = 'gif|jpeg|jpg|png';
+            $config['max_size'] = 2048;
+            $config['max_width'] = 250;
+            $config['max_height'] = 250;
+            $config['file_name'] = md5(uniqid(time()));
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload('avatar')) {
+                $uploadData = $this->upload->data();
+                $avatar = $uploadData['file_name'];
+            } else {
+                $avatar = '';
+                $this->session->set_flashdata('item', array('message' => $this->upload->display_errors(), 'class' => 'danger'));
+                redirect("/character/");
+            }
+        }
     }
 
 

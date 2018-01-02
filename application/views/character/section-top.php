@@ -25,7 +25,7 @@
             <div class="col-md-6 col-md-offset-3">
 
                 <form class="form-horizontal well" role="form" action="<?php echo site_url("character/create"); ?>"
-                      accept-charset="UTF-8" method="POST">
+                      accept-charset="UTF-8" method="POST" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <label class="col-md-2 control-label">Nazwa postaci</label>
