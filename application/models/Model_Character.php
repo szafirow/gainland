@@ -106,11 +106,11 @@ class Model_Character extends MY_Model
             $this->db->insert('bag', $data);
 
         }
-        $this->upload_file_avatar();
+        $this->upload_file_avatar($id);
 
     }
 
-    private function upload_file_avatar()
+    private function upload_file_avatar($id)
     {
         //upload avatara
         if (!empty($_FILES['avatar']['name'])) {
@@ -132,6 +132,43 @@ class Model_Character extends MY_Model
                 $this->session->set_flashdata('item', array('message' => $this->upload->display_errors(), 'class' => 'danger'));
                 redirect("/character/");
             }
+
+            //zapis avatara w bazie
+            $data = array(
+                'name' => $uploadData['file_name'],
+                'date_add' => date('Y-m-d H:i:s')
+            );
+            $this->db->insert('image', $data);
+
+            $id_image = $this->db->insert_id();
+
+            //zapis typu obrazka
+            $data = array(
+                'id_image' => $id_image,
+                'id_type_image' => 1
+            );
+            $this->db->insert('image_type', $data);
+
+            //przypisanie avatara do użytkownika
+            //select pobierajacy id_char
+            $this->db->select('id_character');
+            $this->db->from('character');
+            $this->db->where('id_user', $id);
+            $query = $this->db->get();
+
+            if ($query->num_rows() > 0) {
+                $result = $query->result_array();
+                $id_character = $result['0']['id_character'];
+            }
+
+
+            $data = array(
+                'id_image' => $id_image,
+            );
+            $this->db->where('id_character', $id_character);
+            $this->db->update('character', $data);
+
+
         }
     }
 
