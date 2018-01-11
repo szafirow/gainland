@@ -55,6 +55,7 @@ class Model_User extends MY_Model
             'password' => $this->encrypt_password($password),
             'email' => $email,
             'recommended' => $recommended,
+            'id_rank' => 1,
             'active' => 1,
             'date_add' => $date_add
         );
@@ -102,6 +103,21 @@ class Model_User extends MY_Model
             'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
         );
         return password_hash($password, PASSWORD_BCRYPT, $options);
+    }
+
+    public function rank($id)
+    {
+        $this->db->select('id_rank');
+        $this->db->from('user');
+        $this->db->where('id_user', $id);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            $rank = $result['0']['id_rank'];
+        }
+        return $rank;
+
     }
 
 

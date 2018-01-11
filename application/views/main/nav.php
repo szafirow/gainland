@@ -25,6 +25,20 @@
                 <li><a href="#"><i class="fa fa-folder-open" aria-hidden="true"></i> Notatki</a></li>
                 <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Ustawienia</a></li>
                 <li><a href="#"><i class="fa fa-question" aria-hidden="true"></i> Pomoc</a></li>
+
+                <?php if ($logged_in && $rank == '2'): ?>
+                    <li><a href="asd.php">
+                    <span class="icon-panel">
+                        <span class="path1"></span><span class="path2"></span><span class="path3"></span><span
+                                class="path4"></span><span class="path5"></span><span class="path6"></span><span
+                                class="path7"></span><span class="path8"></span><span class="path9"></span><span
+                                class="path10"></span><span class="path11"></span><span class="path12"></span><span
+                                class="path13"></span><span class="path14"></span><span class="path15"></span><span
+                                class="path16"></span><span class="path17"></span><span class="path18"></span><span
+                                class="path19"></span><span class="path20"></span><span class="path21"></span>
+                    </span>
+                            PA</a></li>
+                <?php endif; ?>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

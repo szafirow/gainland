@@ -2,6 +2,7 @@
 .idea/
 *.iml
 notatki.txt
+robots.txt
 
 #codeigniter
 */config/development

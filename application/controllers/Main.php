@@ -7,17 +7,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Time: 20:49
  */
 
+/**
+ * @property Model_User $Model_User
+ */
 class Main extends FrontendController
 {
     function __construct()
     {
         parent::__construct();
         $this->is_logged_in();
+        $this->load->model('Model_User');
     }
 
     public function index()
     {
         $data['login'] = $this->login;
+        $data['logged_in'] = $this->session->userdata('logged_in');
+        $data['rank'] = $this->Model_User->rank($this->id);
 
         $this->load->view('main/head.php');
         $this->load->view('main/nav.php', $data);
