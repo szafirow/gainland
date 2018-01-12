@@ -25,11 +25,11 @@ class Main extends FrontendController
         $data['logged_in'] = $this->session->userdata('logged_in');
         $data['rank'] = $this->Model_User->rank($this->id);
 
-        $this->load->view('main/head.php');
-        $this->load->view('main/nav.php', $data);
-        $this->load->view('main/section-top.php');
-        $this->load->view('main/section-content.php');
-        $this->load->view('main/footer.php');
+        $this->load->view('main/head');
+        $this->load->view('main/nav', $data);
+        $this->load->view('main/section-top');
+        $this->load->view('main/section-content');
+        $this->load->view('main/footer');
     }
 
 

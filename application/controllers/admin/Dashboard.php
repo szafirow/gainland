@@ -16,12 +16,9 @@ class Dashboard extends BackendController
 
     function index()
     {
-        $this->load->view('admin/admin.php');
-    }
-
-    function c()
-    {
-        echo 'test';
+        $this->load->view('admin/head');
+        $this->load->view('admin/wrapper');
+        $this->load->view('admin/footer');
     }
 
 

@@ -17,22 +17,22 @@ class Home extends FrontendController
     public function index()
     {
 
-        $this->load->view('home/head.php');
-        $this->load->view('home/nav.php');
-        $this->load->view('home/header.php');
+        $this->load->view('home/head');
+        $this->load->view('home/nav');
+        $this->load->view('home/menu-header');
+        $this->load->view('home/divider');
+        $this->load->view('home/section-capitol');
+        $this->load->view('home/divider');
+        $this->load->view('home/section-prolog');
+        $this->load->view('home/divider');
+        $this->load->view('home/section-news');
+        $this->load->view('home/divider');
+        $this->load->view('home/section-stat');
+        $this->load->view('home/divider');
+        $this->load->view('home/section-best');
         $this->load->view('home/divider.php');
-        $this->load->view('home/section-capitol.php');
-        $this->load->view('home/divider.php');
-        $this->load->view('home/section-prolog.php');
-        $this->load->view('home/divider.php');
-        $this->load->view('home/section-news.php');
-        $this->load->view('home/divider.php');
-        $this->load->view('home/section-stat.php');
-        $this->load->view('home/divider.php');
-        $this->load->view('home/section-best.php');
-        $this->load->view('home/divider.php');
-        $this->load->view('home/section-invitation.php');
-        $this->load->view('home/footer.php');
+        $this->load->view('home/section-invitation');
+        $this->load->view('home/footer');
 
     }
 

@@ -22,8 +22,8 @@
         </div>
 
         <div class="row">
-            <?php $this->load->view('home/header/header-left.php'); ?>
-            <?php $this->load->view('home/header/header-right.php'); ?>
+            <?php $this->load->view('home/header/header-left'); ?>
+            <?php $this->load->view('home/header/header-right'); ?>
         </div>
     </div>
 </header>

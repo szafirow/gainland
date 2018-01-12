@@ -23,10 +23,10 @@ class Character extends FrontendController
     {
         $data['login'] = $this->login;
 
-        $this->load->view('character/head.php');
-        $this->load->view('character/nav.php', $data);
-        $this->load->view('character/section-top.php');
-        $this->load->view('character/footer.php');
+        $this->load->view('character/head');
+        $this->load->view('character/nav', $data);
+        $this->load->view('character/section-top');
+        $this->load->view('character/footer');
     }
 
     public function create()
