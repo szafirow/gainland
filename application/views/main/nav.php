@@ -27,7 +27,7 @@
                 <li><a href="#"><i class="fa fa-question" aria-hidden="true"></i> Pomoc</a></li>
 
                 <?php if ($logged_in && $rank == '2'): ?>
-                    <li><a href="asd.php">
+                    <li><a href="<?php echo base_url('admin/dashboard') ?>">
                     <span class="icon-panel">
                         <span class="path1"></span><span class="path2"></span><span class="path3"></span><span
                                 class="path4"></span><span class="path5"></span><span class="path6"></span><span

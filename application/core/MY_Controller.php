@@ -51,6 +51,7 @@ class MY_Controller extends CI_Controller
                 return TRUE;
             } elseif ($count > 0) {
                 show_error('You don\'t have permission to access this page.', 401);
+                die();
             }
 
 
