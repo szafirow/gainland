@@ -19,4 +19,10 @@ class Dashboard extends BackendController
         $this->load->view('admin/admin.php');
     }
 
+    function c()
+    {
+        echo 'test';
+    }
+
+
 }
