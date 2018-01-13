@@ -37,11 +37,12 @@ class MY_Controller extends CI_Controller
     function is_logged_in()
     {
         $logged_in = $this->session->userdata('logged_in');
-        $rank = $this->Model_User->rank($this->id);
+
         if (empty($logged_in)) {
             show_error('You don\'t have permission to access this page.', 401);
             die();
         } else {
+            $rank = $this->Model_User->rank($this->id);
             $this->load->model('Model_Character');
             $count = $this->Model_Character->count_character($logged_in['login']);
             //var_dump($count); exit();
