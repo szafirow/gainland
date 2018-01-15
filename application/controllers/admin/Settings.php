@@ -2,11 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: patryk
- * Date: 2018-01-12
- * Time: 18:07
+ * Date: 2018-01-15
+ * Time: 18:18
  */
 
-class Dashboard extends BackendController
+class Settings extends BackendController
 {
     function __construct()
     {
@@ -20,6 +20,4 @@ class Dashboard extends BackendController
         $this->load->view('admin/content');
         $this->load->view('admin/footer');
     }
-
-
 }
