@@ -20,4 +20,11 @@ class Settings extends BackendController
         $this->load->view('admin/content');
         $this->load->view('admin/footer');
     }
+
+
+    function save()
+    {
+
+        echo 'test';
+    }
 }

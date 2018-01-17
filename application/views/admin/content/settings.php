@@ -1,5 +1,5 @@
-<form class="form-horizontal">
-
+<form class="form-horizontal" role="form" action="<?php echo site_url("admin/settings/save"); ?>" accept-charset="UTF-8"
+      method="POST" enctype="multipart/form-data">
 
     <div class="form-group">
         <label class="col-md-1 control-label">Logo: </label>
