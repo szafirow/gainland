@@ -22,7 +22,11 @@
         </div>
 
         <div class="row">
-            <?php $this->load->view('home/header/header-left'); ?>
+            <?php
+            $data['toEnd'] = $toEnd;
+            $data['tourNow'] = $tourNow;
+            ?>
+            <?php $this->load->view('home/header/header-left', $data, FALSE); ?>
             <?php $this->load->view('home/header/header-right'); ?>
         </div>
     </div>

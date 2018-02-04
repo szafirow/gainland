@@ -43,6 +43,18 @@ class Model_Character extends MY_Model
         }
     }
 
+    public function getCharacterName($id)
+    {
+        $this->db->select('name');
+        $this->db->from('character');
+        $this->db->where('id_user', $id);
+
+        $query = $this->db->get();
+        $result = $query->result_array();
+        return $result['0']['name'];
+
+    }
+
 
     public function insert($id)
     {

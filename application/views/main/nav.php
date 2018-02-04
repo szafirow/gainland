@@ -14,7 +14,7 @@
         <div class="container">
             <ul class="nav navbar-nav navbar-left">
                 <li class="nohover"><a href="#"><i class="fa fa-gamepad" aria-hidden="true"></i>
-                        Zalogowany: <?php echo $login; ?></a></li>
+                        Zalogowany: <span style="color:red"><?php echo $character; ?></span></a></li>
                 <li class="nohover"><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> Online: 0</a></li>
                 <li class="nohover"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Zarejestrowanych: 0</a>
                 </li>
@@ -22,7 +22,7 @@
                         <a href="#" class="btn btn-danger-pro"><i class="fa fa-star-o" aria-hidden="true"></i>
                             Premium</a>
                     </p></li>
-                <li><a href="#"><i class="fa fa-folder-open" aria-hidden="true"></i> Notatki</a></li>
+                <!-- <li><a href="#"><i class="fa fa-folder-open" aria-hidden="true"></i> Notatki</a></li>-->
                 <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Ustawienia</a></li>
                 <li><a href="#"><i class="fa fa-question" aria-hidden="true"></i> Pomoc</a></li>
 

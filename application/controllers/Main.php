@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * @property Model_User $Model_User
+ * @property Model_Character $Model_Character
  */
 class Main extends FrontendController
 {
@@ -17,11 +18,13 @@ class Main extends FrontendController
         parent::__construct();
         $this->is_logged_in();
         $this->load->model('Model_User');
+        $this->load->model('Model_Character');
     }
 
     public function index()
     {
-        $data['login'] = $this->login;
+        //$data['login'] = $this->login;
+        $data['character'] = $this->Model_Character->getCharacterName($this->id);
         $data['logged_in'] = $this->session->userdata('logged_in');
         $data['rank'] = $this->Model_User->rank($this->id);
 

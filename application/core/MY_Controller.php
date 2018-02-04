@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * @property Model_Character $Model_Character
  * @property Model_User $Model_User
+ * @property Model_Tour $Model_Tour
  */
 class MY_Controller extends CI_Controller
 {
@@ -15,6 +16,7 @@ class MY_Controller extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Model_User');
+        $this->load->model('Model_Tour');
 
         $logged_in = $this->session->userdata('logged_in');
         if (!empty($logged_in)) {
@@ -22,17 +24,9 @@ class MY_Controller extends CI_Controller
             // $this->data['id'] = $logged_in['id_user'];
             $this->id = $logged_in['id_user'];
         }
+
+        $this->Model_Tour->updateTour();
     }
-
-    function index()
-    {
-
-    }
-
-    /*  function countTour(){
-          echo '0';
-      }*/
-
 
     function is_logged_in()
     {

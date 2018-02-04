@@ -3,8 +3,8 @@
         <img src="assets/img/logo.png" alt="img" class="sologan-img img-responsive center-block">
     </div>
     <div class="data">
-        DATA: 4 WERBIX XXI (4443234) <br>
-        KONIEC TURY ZA: 23 MIN
+        DATA: 4 WERBIX XXI (<?php echo $tourNow; ?>) <br>
+        KONIEC TURY ZA: <?php echo $toEnd; ?> MIN
     </div>
     <div class="site-heading">
         <h1 class="golden" data-gold="GAINLAND - NOWY RPG ONLINE">GAINLAND - NOWY RPG ONLINE</h1>
