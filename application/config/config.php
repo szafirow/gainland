@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  */
 
-function __autoload($classname)
+spl_autoload_register(function($classname)
 {
     if (strpos($classname, 'CI_') !== 0) {
         $path = array('libraries');
@@ -16,7 +16,7 @@ function __autoload($classname)
             @require_once $file;
         }
     }
-}
+});
 
 
 /*
