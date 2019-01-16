@@ -100,7 +100,7 @@ class Model_User extends MY_Model
     {
         $options = array(
             'cost' => 11,
-            'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+            'salt' => random_bytes(22),
         );
         return password_hash($password, PASSWORD_BCRYPT, $options);
     }
