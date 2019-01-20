@@ -56,6 +56,24 @@ class Model_Character extends MY_Model
     }
 
 
+    public function getCharacterInfo()
+    {
+        $this->db->select('u.login,ch.name');
+        $this->db->from('character ch');
+        $this->db->join('user u', 'u.id_user = ch.id_user', 'inner');
+        $this->db->where('u.active', 1);  //active=1
+
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+    }
+
+
     public function insert($id)
     {
         //deklaracja danych

@@ -19,6 +19,11 @@ class User extends FrontendController
         parent::__construct();
         $this->load->model('Model_User');
         $this->load->model('Model_Character');
+
+        //$data['login'] = $this->login;
+        $data['character'] = $this->Model_Character->getCharacterName($this->id);
+        $data['logged_in'] = $this->session->userdata('logged_in');
+        $data['rank'] = $this->Model_User->rank($this->id);
     }
 
 
