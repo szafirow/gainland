@@ -61,8 +61,8 @@ class Model_Tour extends MY_Model
         $dateNow = date("H:i", strtotime("now")); //obecna godzina np 18:43
         $tourNow = $this->getTourNow(); //5435
 
-        echo $dateNow;
-        echo $tourChange_d;
+        ///echo $dateNow;
+        //echo $tourChange_d;
         //zmiana tury nastepuej gdy: jesli godzina teraz >= od godzina +1 z bazy tourChange
         if ($dateNow >= $tourChange_d) {
             echo 'dziala';
